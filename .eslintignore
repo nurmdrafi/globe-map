@@ -1,0 +1,8 @@
+.eslintrc.json
+tsconfig.json
+index.d.ts
+*.config.js
+/.next/
+/out/
+/node_modules/
+/public/
