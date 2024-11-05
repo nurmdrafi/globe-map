@@ -17,11 +17,10 @@ const GlobeMap: FC = () => {
   const [rotation, setRotation] = useState(true)
 
   // Generate Random Data
-  const N = 30
-  const gData = [...Array(N).keys()].map(() => ({
-    lat: (Math.random() - 0.5) * 180,
-    lng: (Math.random() - 0.5) * 360,
-  }))
+  const locations = [{
+    lng: 90.37839,
+    lat: 23.8103
+  }]
 
   // Rotate Clouds
   const rotateClouds = useCallback((clouds) => {
@@ -34,24 +33,27 @@ const GlobeMap: FC = () => {
 
   useEffect(() => {
     if (globeEl.current) {
+      globeEl.current.controls().enableZoom = true
       globeEl.current.controls().autoRotate = false
       globeEl.current.controls().autoRotateSpeed = 1
-      globeEl.current?.pointOfView({ lat: 25, lng: 80, altitude: 2 }, 0)
+      globeEl.current.pointOfView({ lat: 25, lng: 80, altitude: 1.75 }, 5000)
       globeEl.current.controls().update()
-
+      
       // Clouds
-      // const CLOUDS_IMG_URL = '/clouds.png'
-      // const CLOUDS_ALT = 0.004
-      // const CLOUDS_RADIUS_SCALE = 1
-      // textureLoader.load(CLOUDS_IMG_URL, (cloudsTexture) => {
-      //   const clouds = new THREE.Mesh(
-      //     new THREE.SphereGeometry(globeEl.current.getGlobeRadius() * (1 + CLOUDS_ALT) * CLOUDS_RADIUS_SCALE, 75, 75),
-      //     new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true }),
-      //   )
-      //   clouds.scale.set(1.015, 1.015, 1.015)
-      //   globeEl.current.scene().add(clouds)
-      //   rotateClouds(clouds)
-      // })
+      setTimeout(() => {
+        const CLOUDS_IMG_URL = '/clouds.png'
+        const CLOUDS_ALT = 0.004
+        const CLOUDS_RADIUS_SCALE = 1
+        textureLoader.load(CLOUDS_IMG_URL, (cloudsTexture) => {
+          const clouds = new THREE.Mesh(
+            new THREE.SphereGeometry(100, 75, 75),
+            new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true }),
+          )
+          clouds.scale.set(1.015, 1.015, 1.015)
+          globeEl.current.scene().add(clouds)
+          rotateClouds(clouds)
+        })
+      }, 500)
     }
   }, [globeEl, rotateClouds, textureLoader])
 
@@ -59,10 +61,10 @@ const GlobeMap: FC = () => {
 
     <Globe
       ref={ globeEl }
-      globeImageUrl="/8k_earth_specular_map.webp" // "/world.jpg"
+      globeImageUrl="8k_earth_daymap.jpg" // "/8k_earth_specular_map.webp" // "/world.jpg"
       backgroundColor="#04172b"
       // backgroundImageUrl="white-background.jpg" // "/night-sky.jpg"
-      htmlElementsData={ gData }
+      htmlElementsData={ locations }
       atmosphereAltitude={ 0.2 }
       htmlElement={ d => {
         const el = document.createElement('div')
