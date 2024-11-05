@@ -7,7 +7,8 @@ const DeckGLMap = dynamic(() => import("../components/DeckGLMap"), { ssr: false 
 const Home = () => {
   return (
     <>
-      <DeckGLMap />
+      {/* <DeckGLMap /> */}
+      <GlobeMap />
     </>
   )
 }

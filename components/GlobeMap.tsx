@@ -1,26 +1,20 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-mixed-operators */
+
+// Resources
+// https://visibleearth.nasa.gov/collection/1484/blue-marble
+// https://www.solarsystemscope.com/textures/
+      
 // @ts-nocheck
-import React, { useEffect, useCallback, useRef, useMemo, useState, FC } from 'react'
+import React, { useEffect, useLayoutEffect, useCallback, useRef, useMemo, useState, FC } from 'react'
 import Globe from 'react-globe.gl'
 import * as THREE from "three"
 
 const GlobeMap: FC = () => {
   const globeEl = useRef()
   const textureLoader = useMemo(() => new THREE.TextureLoader(), [])
-  const globeMaterial = useMemo(() => {
-    const material = new THREE.MeshPhongMaterial()
-    material.bumpScale = 10
-    return material
-  }, [])
   const [places, setPlaces] = useState([])
   const [rotation, setRotation] = useState(true)
-
-  // useEffect(() => {
-  //   // load data
-  //   fetch('https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_populated_places_simple.geojson').then(res => res.json())
-  //     .then(({ features }) => setPlaces(features));
-  // }, []);
 
   // Generate Random Data
   const N = 30
@@ -28,13 +22,6 @@ const GlobeMap: FC = () => {
     lat: (Math.random() - 0.5) * 180,
     lng: (Math.random() - 0.5) * 360,
   }))
-
-  // Load Globe Material
-  const loadGlobeMaterial = useCallback(() => {
-    textureLoader.load("/bump-large.jpg", (texture) => {
-      globeMaterial.bumpMap = texture
-    })
-  }, [textureLoader, globeMaterial])
 
   // Rotate Clouds
   const rotateClouds = useCallback((clouds) => {
@@ -47,34 +34,36 @@ const GlobeMap: FC = () => {
 
   useEffect(() => {
     if (globeEl.current) {
-      globeEl.current.controls().autoRotate = true
+      globeEl.current.controls().autoRotate = false
       globeEl.current.controls().autoRotateSpeed = 1
-      globeEl.current.pointOfView({ altitude: 2.5 }, 500)
+      globeEl.current?.pointOfView({ lat: 25, lng: 80, altitude: 2 }, 0)
       globeEl.current.controls().update()
 
-      loadGlobeMaterial()
-
-      const CLOUDS_IMG_URL = '/clouds.png'
-      const CLOUDS_ALT = 0.004
-      textureLoader.load(CLOUDS_IMG_URL, (cloudsTexture) => {
-        const clouds = new THREE.Mesh(
-          new THREE.SphereGeometry(globeEl.current.getGlobeRadius() * (1 + CLOUDS_ALT), 75, 75),
-          new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true })
-        )
-        globeEl.current.scene().add(clouds)
-        rotateClouds(clouds)
-      })
+      // Clouds
+      // const CLOUDS_IMG_URL = '/clouds.png'
+      // const CLOUDS_ALT = 0.004
+      // const CLOUDS_RADIUS_SCALE = 1
+      // textureLoader.load(CLOUDS_IMG_URL, (cloudsTexture) => {
+      //   const clouds = new THREE.Mesh(
+      //     new THREE.SphereGeometry(globeEl.current.getGlobeRadius() * (1 + CLOUDS_ALT) * CLOUDS_RADIUS_SCALE, 75, 75),
+      //     new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true }),
+      //   )
+      //   clouds.scale.set(1.015, 1.015, 1.015)
+      //   globeEl.current.scene().add(clouds)
+      //   rotateClouds(clouds)
+      // })
     }
-  }, [globeEl, loadGlobeMaterial, rotateClouds, textureLoader])
+  }, [globeEl, rotateClouds, textureLoader])
 
   return (
+
     <Globe
       ref={ globeEl }
-      globeMaterial={ globeMaterial }
-      globeImageUrl="/world-high.jpg" // https://visibleearth.nasa.gov/collection/1484/blue-marble
-      bumpImageUrl="/bump-large.jpg"
-      backgroundImageUrl="/night-sky.png"
+      globeImageUrl="/8k_earth_specular_map.webp" // "/world.jpg"
+      backgroundColor="#04172b"
+      // backgroundImageUrl="white-background.jpg" // "/night-sky.jpg"
       htmlElementsData={ gData }
+      atmosphereAltitude={ 0.2 }
       htmlElement={ d => {
         const el = document.createElement('div')
         el.innerHTML = "<img src='/marker.png' width='50px' height='50px'>"
