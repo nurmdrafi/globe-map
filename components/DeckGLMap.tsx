@@ -1,5 +1,6 @@
 /* eslint-disable prefer-destructuring */
 import { FC, useRef } from "react"
+import { MAP_STYLES } from "../app.config"
 
 // Import Components
 import { Map } from "react-bkoi-gl"
@@ -16,7 +17,7 @@ import OfferLayer from "./OfferLayer"
 const DeckGLMap: FC = () => {
   // States
   const mapRef: any = useRef<MapRef>(null)
-  const mapStyle = `https://map.barikoi.com/styles/osm-liberty/style.json?key=MjYxOTo0Rko3SlhBVlRJ`
+  const mapStyle = MAP_STYLES
   const initialViewState = {
     longitude: -122.4,
     latitude: 37.74,
