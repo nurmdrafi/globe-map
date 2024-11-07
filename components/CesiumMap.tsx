@@ -1,7 +1,7 @@
 // @ts-nocheck
+import React, { useEffect, useState, useRef } from 'react'
 import { UrlTemplateImageryProvider, Ion, Cartesian3 } from 'cesium'
-import React, { useEffect, useRef } from 'react'
-import { BillboardGraphics, Camera, CameraFlyTo, Entity, ImageryLayer, Viewer } from 'resium'
+import { BillboardGraphics, Camera, CameraFlyTo, Entity, ImageryLayer, SkyBox, Viewer } from 'resium'
 import { CESIUS_ACCESS_TOKEN } from '../app.config'
 
 const CesiumMap = () => {
@@ -22,8 +22,8 @@ const CesiumMap = () => {
   // Configure the custom imagery provider
   const imageryProvider = new UrlTemplateImageryProvider({
     // url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
-    url: "https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=gQ7deYpNrAaZJt7X1omk"
     // url: "https://tiles.barikoimaps.dev/styles/osm_barikoi_v2/512/{z}/{x}/{y}.png"
+    url: "https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=gQ7deYpNrAaZJt7X1omk"
   })
 
   // Set Access token
@@ -33,22 +33,31 @@ const CesiumMap = () => {
     <div className='map-container'>
       <Viewer 
         full 
-        imageryProvider={ false } // Hide the default base layer
+        imageryProvider={ false } // Hide the default imagery provider
         baseLayerPicker={ false } // Hide the default base layer
       >
         <ImageryLayer imageryProvider={ imageryProvider } />
         <CameraFlyTo duration={ 5 } destination={ Cartesian3.fromDegrees(90, 25, 1000000 * 9) } />
-        { locations.map((location, index) => (
+
+        {locations.map((location, index) => (
           <Entity
             key={ index }
             position={ Cartesian3.fromDegrees(location.longitude, location.latitude, 100) }
           >
             <BillboardGraphics image="marker.png" scale={ 1 } />
           </Entity>
-        )) }
+        ))}
+        <SkyBox 
+          sources={{
+            positiveX: '/skybox/skybox_px.jpg',
+            negativeX: '/skybox/skybox_nx.jpg',
+            positiveY: '/skybox/skybox_py.jpg',
+            negativeY: '/skybox/skybox_ny.jpg',
+            positiveZ: '/skybox/skybox_pz.jpg',
+            negativeZ: '/skybox/skybox_nz.jpg',
+          }}
+        />
       </Viewer>
-
-      <div className="barikoi-logo" />
     </div>
 
   )
