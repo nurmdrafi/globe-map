@@ -27,7 +27,7 @@
     "strict": true,
     "incremental": true
   },
-  "baseUrl": "./",
+  "baseUrl": "/",
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -39,5 +39,6 @@
     "node_modules",
     ".next",
     "out",
+    "public",
   ]
 }

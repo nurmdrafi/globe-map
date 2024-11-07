@@ -1,0 +1,562 @@
+{
+    "locations":[
+     {
+      "title": "Global Headquarters",
+      "name": "Purchase",
+      "address": "2000 Purchase Street\nPurchase, NY 10577 U.S.A.\nTelephone: 914.249.2000",
+      "latitude": 41.0234589,
+      "longitude": -73.714275
+     },
+     {
+      "title": "Operations Center",
+      "name": "St. Louis",
+      "address": "2200 Mastercard Blvd\nO'Fallon, MO 63368+7263 U.S.A",
+      "latitude": 38.7467203,
+      "longitude": -90.7460759
+     },
+     {
+      "title": "Regional Headquarters",
+      "name": "Dubai (MIDDLE EAST & AFRICA)",
+      "address": "Mastercard Building\nAl Falak Street\nDubai Internet City\nP.O.Box 500003\nDubai, United Arab Emirates",
+      "latitude": "25.094900748730613, ",
+      "longitude": 55.157914568282
+     },
+     {
+      "name": "Miami (LATIN AMERICA\/CARIBBEAN)",
+      "address": "801 Brickell Avenue, Suite 1300\nMiami, FL 33131 U.S.A.",
+      "latitude": 25.7659731,
+      "longitude": -80.1905682
+     },
+     {
+      "name": "Purchase (NORTH AMERICA)",
+      "address": "100 Manhattanville Road\nPurchase, NY 10577 U.S.A.",
+      "latitude": 41.0267236,
+      "longitude": -73.7154292
+     },
+     {
+      "name": "Singapore (ASIA\/PACIFIC)",
+      "address": "3 Fraser Street DUO Tower\nLevel 17\nSingapore 189352",
+      "latitude": 1.29921,
+      "longitude": 103.858058
+     },
+     {
+      "name": "Waterloo (EUROPE)",
+      "address": "Chaussée de Tervuren 198A\nB-1410, Waterloo, Belgium",
+      "latitude": 50.7106647,
+      "longitude": 4.4093252
+     },
+     {
+      "name": "Australia",
+      "address": "72 Christie St\nSt Leonards,\nNSW 2065",
+      "latitude": -33.8247668,
+      "longitude": 151.1955829
+     },
+     {
+      "name": "Bangladesh",
+      "address": "Crystal Palace (12th Floor),\nSE(D) 22; Road # 140; Gulshan South Avenue,\nGulshan-1,\nDhaka 1212, Bangladesh",
+      "latitude": 23.8103317,
+      "longitude": 90.4125213
+     },
+     {
+      "name": "Beijing",
+      "address": "Room 701-702, 7\/F, China Resources\nNo. 8 Jianguomenbei Avenue\nBeijing 100005, China",
+      "latitude": 39.9131390580859,
+      "longitude": 116.434406077459
+     },
+     {
+      "name": "Shanghai",
+      "address": "Room 2907-14, 29\/F\nTower 2, Shanghai IFC\n8 Century Avenue\nPudong, Shanghai 200120, China ",
+      "latitude": 31.236825465606,
+      "longitude": 121.502094185629
+     },
+     {
+      "name": "Guangzhou",
+      "address": "Rm. 2015-16A, CITIC Plaza,\nNo. 233 Tianhe North Road,\nGuangzhou 510613, China",
+      "latitude": 23.1425356320412,
+      "longitude": 113.325087670476
+     },
+     {
+      "name": "India",
+      "address": "61-A, 2 North Avenue,\nMaker Maxity \nBandra-Kurla Complex,\nMumbai, India 400051",
+      "latitude": 19.0538902,
+      "longitude": 72.8407575
+     },
+     {
+      "address": "Loyalty Solutions\/Pinpoint Solutions Pvt. Ltd.\nUnit 602 and 603\nWindfall, C Wing, Sahar Plaza,\nAndheri Kurla Road, J.B. Nagar,\nAndheri East, Mumbai - 40059",
+      "latitude": 19.1134571,
+      "longitude": 72.8695494
+     },
+     {
+      "address": "5th Floor, DLF Plaza Tower, DLF Phase I,\nGurgaon, Haryana – 122002",
+      "latitude": 28.4708945,
+      "longitude": 77.1017608
+     },
+     {
+      "address": "OHM Business Park\nOHM House II, Opp.\nBalaji Hospital, Subhanpura,\nVadodara, India 390023",
+      "latitude": 22.3181178,
+      "longitude": 73.1637385
+     },
+     {
+      "address": "Business Bay,\nWing 1, Tower A - 3rd, 4th, 8th, 9th & 10th Floor\nWing 1,Tower B – 3rd Floor\n10th Floor, Tower A, Wing 1, Survey No. 103,\nOpp. Poona Club Golf Course, Airport Road, Yerawada, Pune 411006",
+      "latitude": 18.5507076,
+      "longitude": 73.8903915
+     },
+     {
+      "name": "Hong Kong",
+      "address": "Unit 1801-1803, Central Plaza, | 18 Harbour Road,\nWanchai, | Hong Kong",
+      "latitude": 22.2801676790595,
+      "longitude": 114.174286118337
+     },
+     {
+      "name": "Indonesia",
+      "address": "Sentral Senayan I, 6th Floor\nJl. Asia Afrika No. 8\nJakarta 10270, Indonesia",
+      "latitude": -6.2217771,
+      "longitude": 106.7988522
+     },
+     {
+      "name": "Japan",
+      "address": "Toranomon Hills Mori Tower 8th Floor\n1-23-1 Toranomon, Minato-ku,\nTokyo, 105-6308",
+      "latitude": 35.6668271,
+      "longitude": 139.7491539
+     },
+     {
+      "name": "Korea",
+      "address": "Seoul Finance Center, 16th Floor\n84 Taepyungro 1-GA, Chung-Gu\nSeoul 100-768\nRepublic of Korea",
+      "latitude": 37.5691238545507,
+      "longitude": 126.979536706673
+     },
+     {
+      "name": "Malaysia",
+      "address": "Mastercard Asia\/Pacific Pte Ltd\nSuite 17.1, Level 17\nMenara Kencana Petroleum\nNo. 1, Jalan Dutamas 1, Solaris Dutamas\n50480 Kuala Lumpur",
+      "latitude": 3.17076444477358,
+      "longitude": 101.667699158686
+     },
+     {
+      "name": "New Zealand",
+      "address": "Mastercard House\nLevel 3, 136\nCustoms Street West\nViaduct Precent\nAuckland New Zealand 1010",
+      "latitude": -36.8443006920179,
+      "longitude": 174.760518933097
+     },
+     {
+      "name": "Philippines",
+      "address": "27\/F, Unit D\nTower One and Exchange Plaza\nAyala Triangle, Ayala Avenue\nMakati City, 1226 Philippines",
+      "latitude": 14.5565571225407,
+      "longitude": 121.02249026403
+     },
+     {
+      "name": "Singapore",
+      "address": "3 Fraser Street DUO Tower\nLevel 17\nSingapore 189352",
+      "latitude": 1.29921,
+      "longitude": 103.858058
+     },
+     {
+      "name": "Sri Lanka",
+      "address": "Level 34, East Tower, World Trade Centre\nEchelon Square, Colombo 1 , Sri Lanka",
+      "latitude": 6.93277323403074,
+      "longitude": 79.8444013156778
+     },
+     {
+      "name": "Taiwan",
+      "address": "Far East Ltd.\nTaiwan Branch\nCathay Landmark\nRoom B, 42F., No. 68, Sec. 5,\nZhongxiao E. Road, Xinyi Dist.,\nTaipei 11065 Taiwan.",
+      "latitude": 25.040244612754,
+      "longitude": 121.567048267802
+     },
+     {
+      "name": "Thailand",
+      "address": "Q House Lumpini Building\nUnit 1601, 16th floor\n1 South Sathorn Road, Sathorn\nBangkok 10120 Thailand",
+      "latitude": 13.725097403027,
+      "longitude": 100.544537652547
+     },
+     {
+      "name": "Vietnam",
+      "address": "Unit #1, 19th Floor\nBitexco Financial Tower\n2 Hai Trieu Street\nDistrict 1, Ho Chi Minh City,\n700000, Vietnam",
+      "latitude": 10.7718644223909,
+      "longitude": 106.70485870848
+     },
+     {
+      "title": "Europe",
+      "name": "Austria",
+      "address": "Mastercard Europe SA\nWipplingerstraße 30\/DG\n1010 Vienna, Austria",
+      "latitude": 48.2136163813549,
+      "longitude": 16.3677000758934
+     },
+     {
+      "name": "Azerbaijan",
+      "address": "The Landmark 1 Building\n96E Nizami Street\nBaku, Azerbaijan Republic",
+      "latitude": 40.3760236412489,
+      "longitude": 49.8513935149063
+     },
+     {
+      "name": "Bosnia",
+      "address": "BIH – Sarajevo\n1 FRA Andela Zvizdovica\nUnitic Business Center, Building A\nSarajevo, Bosnia",
+      "latitude": 43.8571281,
+      "longitude": 18.4058868
+     },
+     {
+      "name": "Bulgaria",
+      "address": "4th Floor\n88 Dondukov blvd. \n1000 Sofia, Bulgaria",
+      "latitude": 42.6992231,
+      "longitude": 23.3421302
+     },
+     {
+      "name": "Croatia",
+      "address": "Mastercard Europe – podruznica Zagreb\nRadnicka cesta 80\n12th floor\n10 000 Zagreb",
+      "latitude": 45.8007400312531,
+      "longitude": 16.0082110520932
+     },
+     {
+      "name": "Czech Republic",
+      "address": "Na Porici 1079\/3a\n110 00 Prague 1\nCzech Republic",
+      "latitude": 50.0888718,
+      "longitude": 14.4298288
+     },
+     {
+      "name": "France",
+      "address": "112, Avenue Kleber\n75784 Paris Cedex 16\nFrance ",
+      "latitude": 48.8646187519265,
+      "longitude": 2.28869642690883
+     },
+     {
+      "name": "Germany",
+      "address": "Taunusanlage 9-10\n60329 Frankfurt am Main\nGermany",
+      "latitude": 50.1125063,
+      "longitude": 8.6687498
+     },
+     {
+      "address": "Munich, Nymphenburger Hofe\nExcellent Business Center – 5th Floor\nNymphenburger Strasse 4\nMunich, 80335",
+      "latitude": 48.148142,
+      "longitude": 11.557164
+     },
+     {
+      "name": "Greece",
+      "address": "23 Vasilissis Sofias Avenue\n10674 Athens, Greece",
+      "latitude": 37.9757491,
+      "longitude": 23.7415609
+     },
+     {
+      "name": "Hungary",
+      "address": "VÁCI 1,\n1052 Budapest\nDeák Ferenc u. 3-5.",
+      "latitude": 47.4955238,
+      "longitude": 19.0507997
+     },
+     {
+      "name": "Ireland",
+      "address": "MountainView\nCentral Park\nLeopardstown\nDublin 18",
+      "latitude": 53.2709498273753,
+      "longitude": -6.20490351614583
+     },
+     {
+      "name": "Israel",
+      "address": "Abba Hillel Silver Rd 21\nRamat Gan, Israel",
+      "latitude": 32.0863972,
+      "longitude": 34.8046143
+     },
+     {
+      "name": "Knutsford",
+      "address": "Suite GA, Ground Floor\nNo. 5 Booths Park\nChelford Road\nKnutsford\nCheshire\nWA16 8QZ",
+      "latitude": 53.298431484842,
+      "longitude": -2.35139161941261
+     },
+     {
+      "name": "Mastercard Payment Gateway Services",
+      "address": "7th Floor, 1 Angel Lane,\nLondon, England, EC4R 3AB",
+      "latitude": 51.5095918,
+      "longitude": -0.0896696
+     },
+     {
+      "name": "Mastercard Payment Transaction Services SA",
+      "address": "1 Piusa Dziekonskiego St.\n00 – 728 Warsaw\nPoland",
+      "latitude": 52.1950111748901,
+      "longitude": 21.0485191843868
+     },
+     {
+      "name": "Mastercard Switching Services",
+      "address": "Chaussée de Tervuren 198A\n1410 Waterloo\nBelgium",
+      "latitude": 50.7100204,
+      "longitude": 4.4077063
+     },
+     {
+      "name": "Milan",
+      "address": "Via Turati 30, 3rd Floor\nMilan, Italy - 20121",
+      "latitude": 45.4763102,
+      "longitude": 9.195496
+     },
+     {
+      "name": "Peterborough",
+      "address": "Mastercard Prepaid Management Services\nAccess House, Cygnet Road\nHampton, Peterborough\n​United Kingdom\nPE7 8FJ",
+      "latitude": 52.542795152022,
+      "longitude": -0.255019070539196
+     },
+     {
+      "name": "Poland",
+      "address": "Plac Europejski 1\nWarsaw Spire, 31st Floor\n00-844 Warsaw, Poland",
+      "latitude": 52.2322481,
+      "longitude": 20.9841221
+     },
+     {
+      "name": "Portugal",
+      "address": "Av. Miguel Bombarda 4\nLisbon, Portugal 1000-208",
+      "latitude": 38.737513,
+      "longitude": -9.1446141
+     },
+     {
+      "name": "Romania",
+      "address": "4-8 Nicolae Titulescu Street\nAmerica House Building, West Wing,\n2nd Floor\n011141 Bucharest, Romania",
+      "latitude": 44.452405840769,
+      "longitude": 26.0815109257455
+     },
+     {
+      "name": "Rome",
+      "address": "Piazza del Popolo 18, 1st Floor \nRoma, Italy - 00187",
+      "latitude": 41.9102946,
+      "longitude": 12.477379
+     },
+     {
+      "name": "Serbia",
+      "address": "Navigator Business Centre\n5th floor\nMilutina Milankovića, 1Ž\nBelgrade, Serbia",
+      "latitude": 44.8065739,
+      "longitude": 20.4224459
+     },
+     {
+      "name": "Slovenia",
+      "address": "Dimičeva ulica 13\n1504 Ljubljana, Slovenia",
+      "latitude": 46.0716121,
+      "longitude": 14.5149569
+     },
+     {
+      "name": "Spain",
+      "address": "Paseo de la Castellana, 259 C, 11ª\nTorre Cristal \/ 28046 Madrid, Spain",
+      "latitude": 40.4781919,
+      "longitude": -3.6874821
+     },
+     {
+      "name": "Sweden",
+      "address": "Kungsgatan 33, 4th floor\nSE-111 56\nStockholm, Sweden",
+      "latitude": 59.3357613,
+      "longitude": 18.0660604
+     },
+     {
+      "name": "Switzerland",
+      "address": "Löwenstrasse 25\n8001 Zurich",
+      "latitude": 47.3744257,
+      "longitude": 8.535506
+     },
+     {
+      "name": "The Netherlands",
+      "address": "Prins Hendrikkade 48\n1012 AC Amsterdam\nThe Netherlands",
+      "latitude": 52.3764846,
+      "longitude": 4.899146
+     },
+     {
+      "name": "Turkey",
+      "address": "Tamburi Ali Efendi Sok.\nNo:13 34337 Etiler - Istanbul, Turkey",
+      "latitude": 41.0772618,
+      "longitude": 29.0310201
+     },
+     {
+      "name": "Ukraine",
+      "address": "17\/52, Bogdana Khmelnitskogo Street\nFloor 4A, Office 404A\nKyiv, 01030, Ukraine",
+      "latitude": 50.4479995752084,
+      "longitude": 30.5263019846249
+     },
+     {
+      "name": "United Kingdom",
+      "address": "1 Angel Lane\nLondon, United Kingdom\nEC4R 3AB",
+      "latitude": 51.5115922583078,
+      "longitude": -0.0900824171008678
+     },
+     {
+      "name": "Waterloo",
+      "address": "Chaussée de Tervuren 198A\nB-1410, Waterloo, Belgium",
+      "latitude": 50.7106647,
+      "longitude": 4.4093252
+     },
+     {
+      "title": "Latin America \/ Caribbean",
+      "name": "Argentina",
+      "address": "Porteño Plaza 1\nOlga Cossentini 771, 2nd Floor\nBuenos Aires, Argentina, C1107CDA",
+      "latitude": -34.6062670254205,
+      "longitude": -58.3641602397457
+     },
+     {
+      "name": "Brazil",
+      "address": "SH\/Sul Quadra 6\nConjunto A, Bloco A, Sala 611\nBrasilia, DF - Brazil, 70316-000",
+      "latitude": -15.7085377193102,
+      "longitude": -47.9143537445154
+     },
+     {
+      "address": "Av. Nações Unidas, 14.171\nTorre Crystal, 20º andar\nSão Paulo, SP - Brazil, 04794-000",
+      "latitude": -23.6245853653808,
+      "longitude": -46.7024589503724
+     },
+     {
+      "name": "Chile",
+      "address": "Avda. Apoquindo 2929, 21st Floor\nLas condes\nSantiago, Chile",
+      "latitude": -33.4177154,
+      "longitude": -70.5991355
+     },
+     {
+      "name": "Colombia",
+      "address": "Carrera 9 No. 78 - 32,\n978 building\nBogota, Colombia",
+      "latitude": 4.5954939,
+      "longitude": -74.0793648
+     },
+     {
+      "address": "Carerra 43 A No. 1-50\nTorre 1, 6th Floor\nMedellin, Colombia",
+      "latitude": 6.2043449,
+      "longitude": -75.5710605
+     },
+     {
+      "name": "Costa Rica",
+      "address": "Avenida Escazú Torre Lexus\nAE 101 6th Floor\nSan José, Costa Rica",
+      "latitude": 9.9386068943654,
+      "longitude": -84.1427452127283
+     },
+     {
+      "name": "Ecuador",
+      "address": "Finlandia No. 36-41\nQuito, Ecuador",
+      "latitude": -0.1789759,
+      "longitude": -78.4806688
+     },
+     {
+      "name": "Guatemala",
+      "address": "3a Avenida 13-78, Zona 10\nTorre Citibank, 8th Floor\nGuatemala, Guatemala, 01010",
+      "latitude": 14.5983622605806,
+      "longitude": -90.513585011741
+     },
+     {
+      "name": "Mexico",
+      "address": "Av. Paseo de la Reforma\n250 Torre A\nCol. Juarez, 22th Floor\nMexico City, Mexico 6600",
+      "latitude": 19.4281218411976,
+      "longitude": -99.1620410189938
+     },
+     {
+      "name": "Miami (Latin America\/Caribbean Headquarters)",
+      "address": "801 Brickell Avenue\nSuite 1300\nMiami, FL 33131 U.S.A.",
+      "latitude": 25.7659731,
+      "longitude": -80.1905682
+     },
+     {
+      "name": "Panama",
+      "address": "Ave de la Rotonda.\nPH Prime Time Tower\nPiso 6 - Oficina Mastercard Panamá.\nCosta del Este, Panama City, Panama.",
+      "latitude": 9.00999652258673,
+      "longitude": -79.4736808135552
+     },
+     {
+      "name": "Peru",
+      "address": "Av. El Derby 055\nTorre 1, 5th Floor, Of. 501\nEdificio Cronos,\nSantiago de Surco\nLima, Peru",
+      "latitude": -12.0994102433431,
+      "longitude": -76.9700243904866
+     },
+     {
+      "name": "Venezuela",
+      "address": "Avenida Venezuela, El Rosal\nTorre BOD, 2nd Floor, Ofc. 2CD,\nCaracas, Venezuela, 1060",
+      "latitude": 10.4893006215229,
+      "longitude": -66.8636436254943
+     },
+     {
+      "title": "Middle East & Africa",
+      "name": "Bahrain",
+      "address": "Suite 904, 9th Floor\nBahrain World Trade Centre\nWest Tower, Isa Al Kabeer Avenue\nBlock 316 Manama, Bahrain",
+      "latitude": 26.2400292041394,
+      "longitude": 50.5823961802749
+     },
+     {
+      "name": "Egypt",
+      "address": "Nile City Towers, 2005C Cornich El Nile\nNorth Tower, 16th Floor\nRamlet Beaulac, 1121\nCairo, Egypt",
+      "latitude": 30.0719858364542,
+      "longitude": 31.2286376454972
+     },
+     {
+      "name": "Kenya",
+      "address": "2nd Floor, Tsavo Block, Eldama Park,\nEldama Ravine Road, Off Peponi Road\nP.O. Box 2194 00606\nNairobi, Kenya",
+      "latitude": -1.2533802747957,
+      "longitude": 36.8034590185906
+     },
+     {
+      "name": "Morocco",
+      "address": "Tour Crystal 1 ETG 12, Bd. Sidi Mohammed Ben Abdellah\nQuartier Casablanca Marina\nCode postale 20030\nCasablanca - Morocco",
+      "latitude": 33.6086277182472,
+      "longitude": -7.62409648986414
+     },
+     {
+      "name": "Nigeria",
+      "address": "7th Floor,\nAlliance Place\n33A Alfred Rewane Road\nIkoyi\nLagos",
+      "latitude": 6.450261,
+      "longitude": 3.4285863
+     },
+     {
+      "name": "Pakistan",
+      "address": "Bahria Complex III, M.T. Khan Road\nKarachi, Pakistan",
+      "latitude": 24.8438043,
+      "longitude": 67.0031248
+     },
+     {
+      "name": "Qatar",
+      "address": "Al Fardan Office Tower\nOffice No. 2, 16th Floor\nAl Fardan 61; Doha West Bay\nDoha, Qatar",
+      "latitude": 25.320504452671,
+      "longitude": 51.5290545681317
+     },
+     {
+      "name": "Saudi Arabia",
+      "address": "Al Faisaliah Tower\nPlaza A , 3rd Floor\nP.O. Box 66749\nRiyadh 11586, Saudi Arabia",
+      "latitude": 24.6905690848147,
+      "longitude": 46.6856982848547
+     },
+     {
+      "name": "South Africa",
+      "address": "2nd Floor, 23 Melrose Boulevard\nMelrose Arch, Melrose North\n2196 Johannesburg\nSouth Africa",
+      "latitude": -26.1323521,
+      "longitude": 28.069013
+     },
+     {
+      "name": "United Arab Emirates",
+      "address": "Mastercard Building\nAl Falak Street\nDubai Internet City\nP.O.Box 500003\nDubai, United Arab Emirates",
+      "latitude": 25.094578011634,
+      "longitude": 55.1546896014932
+     },
+     {
+      "title": "North America",
+      "name": "Canada",
+      "address": "121 Bloor Street East, Suite 600\nToronto, Ontario M4W 3M5\nCanada",
+      "latitude": 43.6705365,
+      "longitude": -79.3839424
+     },
+     {
+      "name": "Kansas City, Missouri",
+      "address": "11530 NW Ambassador Drive\nKansas City, MO 64153",
+      "latitude": 39.3024144,
+      "longitude": -94.6847522
+     },
+     {
+      "name": "Arlington, Virginia",
+      "address": "4250 North Fairfax Dr\n11th Floor\nArlington, VA 22201",
+      "latitude": 38.8817728,
+      "longitude": -77.1122422
+     },
+     {
+      "name": "New York, New York (Tech Hub)",
+      "address": "150 5th Ave\nNew York, NY 10011",
+      "latitude": 40.7396999,
+      "longitude": -73.9912053
+     },
+     {
+      "name": "O'Fallon, Missouri",
+      "address": "2200 Mastercard Boulevard\nO'Fallon, MO 63368",
+      "latitude": 38.7467203,
+      "longitude": -90.7460759
+     },
+     {
+      "name": "Purchase, New York (Global & North America Headquarters)",
+      "address": "2000 Purchase Street\nPurchase, NY 10577",
+      "latitude": 41.0234822,
+      "longitude": -73.7143227
+     },
+     {
+      "name": "San Francisco, California",
+      "address": "123 Mission Street 4th & 5th Floor\nSan Francisco, CA 94105",
+      "latitude": 37.7917915902933,
+      "longitude": -122.394414448431
+     }
+    ]
+    }

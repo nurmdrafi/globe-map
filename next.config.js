@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
+  output: "standalone",
   reactStrictMode: true,
   webpack: config => {
     config.plugins.push(
