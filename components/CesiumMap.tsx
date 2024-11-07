@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react'
 import { UrlTemplateImageryProvider, Ion, Cartesian3, Color, } from 'cesium'
 import { BillboardGraphics, CameraFlyTo, Entity, ImageryLayer, Scene, Viewer } from 'resium'
@@ -33,6 +32,7 @@ const CesiumMap = () => {
     <div className='map-container'>
       <Viewer 
         full 
+        // @ts-ignore
         imageryProvider={ false } // Hide the default imagery provider
         baseLayerPicker={ false } // Hide the default base layer
         skyBox={ false }
