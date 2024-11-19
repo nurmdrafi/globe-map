@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <title>Globe Map</title>
         <link rel="stylesheet" href="cesium/Widgets/widgets.css" />
       </Head>
       <body>

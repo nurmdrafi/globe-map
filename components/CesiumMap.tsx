@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { UrlTemplateImageryProvider, Ion, Cartesian3, Color, } from 'cesium'
 import { BillboardGraphics, CameraFlyTo, Entity, ImageryLayer, Scene, Viewer } from 'resium'
-import { CESIUS_ACCESS_TOKEN } from '../app.config'
 
 const CesiumMap = () => {
   const [locations, setLocations] = useState([])
 
+  // Fetch data
   useEffect(() => {
     const fetchData = async () => {
       const resp = await fetch('/data/locations.json')
@@ -15,16 +15,21 @@ const CesiumMap = () => {
     }
     fetchData()
   }, [])
-  // console.log(locations)
+
   // Configure the custom imagery provider
   const imageryProvider = new UrlTemplateImageryProvider({
+    // Open Street Map
     // url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+
+    // Barikoi Map
     // url: "https://tiles.barikoimaps.dev/styles/osm_barikoi_v2/512/{z}/{x}/{y}.png"
-    url: "https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=gQ7deYpNrAaZJt7X1omk"
+    
+    // Maptiler Map
+    url: `https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${ process.env.NEXT_PUBLIC_MAPTILER_API_KEY }`
   })
 
   // Set Access token
-  Ion.defaultAccessToken = CESIUS_ACCESS_TOKEN
+  Ion.defaultAccessToken = process.env.NEXT_PUBLIC_CESIUS_ACCESS_TOKEN as string
 
   return (
     <div className='map-container'>
@@ -43,7 +48,7 @@ const CesiumMap = () => {
             key={ index }
             position={ Cartesian3.fromDegrees(location.longitude, location.latitude, 100) }
           >
-            <BillboardGraphics image="marker.png" scale={ 1 } />
+            <BillboardGraphics image="marker.png" scale={ 0.1 } />
           </Entity>
         ))} 
       </Viewer>

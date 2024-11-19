@@ -2,6 +2,9 @@
   "name": "globe-map",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.4.1"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,18 +14,11 @@
     "postinstall": "symlink-dir node_modules/cesium/Build/Cesium public/cesium"
   },
   "dependencies": {
-    "@deck.gl/core": "^9.0.34",
-    "@deck.gl/extensions": "^9.0.34",
-    "@deck.gl/layers": "^9.0.34",
-    "@deck.gl/mapbox": "^9.0.34",
     "cesium": "^1.123.0",
     "next": "14.2.16",
     "react": "^18",
-    "react-bkoi-gl": "^1.0.2",
     "react-dom": "^18",
-    "react-globe.gl": "^2.27.4",
-    "resium": "^1.18.3",
-    "three": "^0.170.0"
+    "resium": "^1.18.3"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -30,7 +26,7 @@
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
-    "eslint": "^8.57.1",
+    "eslint": "^9.15.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-next": "^14.2.3",

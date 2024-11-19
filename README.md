@@ -1,40 +1,168 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Interactive 3D Globe Map built with Cesium and Resium
+This project is a interactive 3D globe map built using `Cesium` and `Resium`. It displays a globe with map styles, various data and allows users to rotate, zoom, and pan the globe.
 
-## Getting Started
+# Getting Started
 
-First, run the development server:
+## Prerequisites
+- Node.js (version 22.4.1 or higher)
+- npm or pnpm
 
+## Installation
+#### Step 1: Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/nurmdrafi/globe-map.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Step 2: Change into the project directory:
+```bash
+cd globe-map
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+#### Step 3: Install dependencies
+```bash
+pnpm install
+or
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+#### Step 4: Create a `.env` file in the root directory of the project and add the following line:
+```code
+NEXT_PUBLIC_CESIUS_ACCESS_TOKEN=your_cesium_access_token
+NEXT_PUBLIC_MAPTILER_API_KEY=your_maptiler_api_key
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### Step 5: Start the develoment server:
+```bash
+pnpm run dev
+or
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### Step 6: Open your web browser and navigate to `http://localhost:3000` to view the globe map.
 
-## Learn More
+# Implementation
+#### Step 1: Install `cesium` and `resium`:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm install cesium resium \
+-D symlink-dir
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Step 2: Configure `next.config.js`
+Edit the `next.config.js` file and add the following code:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```js
+const webpack = require('webpack');
 
-## Deploy on Vercel
+module.exports = {
+  output: "standalone",
+  reactStrictMode: true,
+  webpack: config => {
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        CESIUM_BASE_URL: JSON.stringify('cesium'),
+      }),
+    );
+    return config;
+  }
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Step 3: Set up Script to Copy Cesium Files
+Edit the `package.json` file and add the following script:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```json
+{
+  "scripts": {
+    "postinstall": "symlink-dir node_modules/cesium/Build/Cesium public/cesium"
+  }
+}
+```
+
+#### Step 4: Create a Symbolic Link to Cesium Files
+Run the following commands:
+```bash
+pnpm install
+```
+
+#### Step 5: Update `.gitignore`
+Adding `/public/cesium` to `.gitignore` is good:
+```gitignore
+/public/cesium
+```
+
+#### Step 6: Add Cesium CSS to Next.js
+Add a link tag in head of your `_document.tsx` to load CSS:
+```js
+<link rel="stylesheet" href="cesium/Widgets/widgets.css" />
+```
+
+#### Step 7: Create Component
+
+```ts
+import React, { useEffect, useState } from 'react'
+import { UrlTemplateImageryProvider, Ion, Cartesian3, Color, } from 'cesium'
+import { BillboardGraphics, CameraFlyTo, Entity, ImageryLayer, Scene, Viewer } from 'resium'
+
+const CesiumMap = () => {
+  const [locations, setLocations] = useState([])
+
+  // Fetch data
+  useEffect(() => {
+    const fetchData = async () => {
+      const resp = await fetch('/data/locations.json')
+      const data = await resp.json()
+      // console.log(data.locations)
+      setLocations(() => data.locations.filter((location: any) => location?.latitude && location?.longitude))
+    }
+    fetchData()
+  }, [])
+
+  // Configure the custom imagery provider
+  const imageryProvider = new UrlTemplateImageryProvider({
+    // Open Street Map
+    // url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+
+    // Barikoi Map
+    // url: "https://tiles.barikoimaps.dev/styles/osm_barikoi_v2/512/{z}/{x}/{y}.png"
+    
+    // Maptiler Map
+    url: `https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${ process.env.NEXT_PUBLIC_MAPTILER_API_KEY }`
+  })
+
+  // Set Access token
+  Ion.defaultAccessToken = process.env.NEXT_PUBLIC_CESIUS_ACCESS_TOKEN as string
+
+  return (
+    <div className='map-container'>
+      <Viewer 
+        full 
+        // @ts-ignore
+        imageryProvider={ false } // Hide the default imagery provider
+        baseLayerPicker={ false } // Hide the default base layer
+        skyBox={ false }
+      >
+        <Scene backgroundColor={ Color.LIGHTCYAN } />
+        <ImageryLayer imageryProvider={ imageryProvider } />
+        <CameraFlyTo duration={ 5 } destination={ Cartesian3.fromDegrees(90, 25, 1000000 * 9) } />
+        {locations.map((location: any, index: number) => (
+          <Entity
+            key={ index }
+            position={ Cartesian3.fromDegrees(location.longitude, location.latitude, 100) }
+          >
+            <BillboardGraphics image="marker.png" scale={ 0.1 } />
+          </Entity>
+        ))} 
+      </Viewer>
+    </div>
+
+  )
+}
+
+export default CesiumMap
+```
+
+# Customization
+
+## Imagery Provider
+To change the imagery provider, modify the imageryProvider object in the CesiumMap component. You can use different providers such as `OpenStreetMap`, `Barikoi Maps`, or `Maptiler`.

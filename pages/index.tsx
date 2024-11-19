@@ -1,15 +1,11 @@
 import dynamic from "next/dynamic"
 
-const DeckGLMap = dynamic(() => import("../components/DeckGLMap"), { ssr: false })
+// Import Components
 const CesiumMap = dynamic(() => import("../components/CesiumMap"), { ssr: false })
 
 const Home = () => {
   return (
-    <>
-      {/* <DeckGLMap /> */}
-      {/* <GlobeMap /> */}
-      <CesiumMap />
-    </>
+    <CesiumMap />
   )
 }
 
